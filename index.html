@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Poke Finder</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
   <body>
-    <div class = "main">
-      <input type="text" id="pokemonName" placeholder="Enter Pokemon name">
-      <button onclick="fetchData()">Fetch Pokemon</button><br>
+    <div class="main">
+      <input type="text" id="pokemonName" placeholder="Enter Pokemon name" />
+      <button onclick="fetchData()">Fetch Pokemon</button><br />
 
       <img
         src=""
@@ -17,6 +17,22 @@
         id="pokemonSprite"
         style="display: none"
       />
+
+      <div class="types">
+        <img
+          src=""
+          alt="Pokemon Type 1"
+          id="pokemonType1"
+          style="display: none"
+        />
+
+        <img
+          src=""
+          alt="Pokemon Type 2"
+          id="pokemonType2"
+          style="display: none"
+        />
+      </div>
     </div>
 
     <script src="script.js"></script>
