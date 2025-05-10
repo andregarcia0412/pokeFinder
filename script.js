@@ -11,6 +11,7 @@ async function fetchData() {
       throw new Error("Could not fetch resource");
     }
 
+    //sprite
     const data = await response.json();
     const pokemonSprite = data.sprites.front_default;
     const imgPokeSprite = document.getElementById("pokemonSprite");
@@ -18,20 +19,48 @@ async function fetchData() {
     imgPokeSprite.src = pokemonSprite;
     imgPokeSprite.style.display = "block";
 
-    const pokemonType = data.types.map((type) => type.type.name); //retorna o nome do tipo. Funciona com pokemonType.length
+    //types
+    const pokemonType = data.types.map((type) => type.type.name);
     const imgPokeType1 = document.getElementById("pokemonType1");
     const imgPokeType2 = document.getElementById("pokemonType2");
-    console.log(pokemonType[0], pokemonType[1]);
 
     imgPokeType1.src = verifyType(pokemonType[0]);
     imgPokeType1.style.display = "block";
-
+    
     if (pokemonType.length == 2) {
       imgPokeType2.src = verifyType(pokemonType[1]);
       imgPokeType2.style.display = "block";
     } else{
       imgPokeType2.style.display = "none";
     }
+
+    //stats
+    const pokeHp = data.stats[0].base_stat
+    const pokeAtk = data.stats[1].base_stat
+    const pokeDef = data.stats[2].base_stat
+    const pokeSpcAtk = data.stats[3].base_stat
+    const pokeSpcDef = data.stats[4].base_stat
+    const pokeSpd = data.stats[5].base_stat
+
+    const statsH1 = document.getElementById("nameStats")
+    const hpTxt = document.getElementById("hp")
+    const atkTxt = document.getElementById("atk")
+    const defTxt = document.getElementById("def")
+    const spcAtkTxt = document.getElementById("spcAtk")
+    const spcDefTxt = document.getElementById("spcDef")
+    const spdTxt = document.getElementById("spd")
+
+    statsH1.textContent = `${pokemonName[0].toUpperCase() + pokemonName.substring(1)} Stats:`
+    hpTxt.textContent = `Hp: ${pokeHp}`
+    atkTxt.textContent = `Attack: ${pokeAtk}`
+    defTxt.textContent = `Defense: ${pokeDef}`
+    spcAtkTxt.textContent = `Special Attack: ${pokeSpcAtk}`
+    spcDefTxt.textContent = `Special Defense: ${pokeSpcDef}`
+    spdTxt.textContent = `Speed: ${pokeSpd}`
+    
+    //adicionar texto aos tipos e colocar o número da pokedex (id)
+
+
   } catch (error) {
     console.error(error);
   }
