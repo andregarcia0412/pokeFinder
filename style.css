@@ -1,16 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-
+@font-face {
+  font-family: "Pokemon";
+  src: url("pokemonsolid.ttf") format("truetype");
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat";
+  font-size: 28px;
 }
-
+header {
+  padding: 10px;
+}
 body {
   align-items: center;
   padding: 10px;
-  background-color: #333;
+  background-color: #03254C;
+  height: 100%;
 }
 
 img {
@@ -24,11 +31,63 @@ button {
   border: none;
   cursor: pointer;
   transition: background-color 0.2s linear;
+  width: 300px;
 }
 button:hover {
   background-color: #bbb;
 }
-.types {
-    display: flex;
-    width: 600px;
+
+.informations{
+  display: flex;
+  justify-content: space-between;
 }
+
+.column{
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  height: 55vh;
+  align-items: flex-start;
+  margin-left: 50px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 55vh;
+}
+.types {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55vh;
+  width: 600px;
+}
+
+#pokemonName {
+  width: 335px;
+  height: 50px;
+  border-radius: 1000px;
+  border: none;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+#nameStats{
+  font-size: 36px;
+}
+
+#pokemonSprite{
+  width: 150px;
+}
+
