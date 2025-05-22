@@ -23,9 +23,11 @@ async function fetchData() {
     const pokemonType = data.types.map((type) => type.type.name);
     const imgPokeType1 = document.getElementById("pokemonType1");
     const imgPokeType2 = document.getElementById("pokemonType2");
+    const txtPokeTypeName = document.getElementById("nameTypes")
 
     imgPokeType1.src = verifyType(pokemonType[0]);
     imgPokeType1.style.display = "block";
+    txtPokeTypeName.textContent = pokemonName[0].toUpperCase() + pokemonName.substring(1) + " Types:"
     
     if (pokemonType.length == 2) {
       imgPokeType2.src = verifyType(pokemonType[1]);
