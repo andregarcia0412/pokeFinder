@@ -68,6 +68,7 @@ button:hover {
 }
 .types {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 55vh;
@@ -87,7 +88,18 @@ button:hover {
   font-size: 36px;
 }
 
+#nameTypes{
+  font-size: 36px;
+  color: white;
+}
+
+#typesImg{
+  display: flex;
+  margin-left: 235px;
+  margin-top: 15px;
+  gap: 10px;
+}
+
 #pokemonSprite{
   width: 150px;
 }
-
